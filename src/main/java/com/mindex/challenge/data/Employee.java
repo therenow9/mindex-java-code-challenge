@@ -10,9 +10,6 @@ public class Employee {
     private String department;
     private List<Employee> directReports;
 
-    public Employee() {
-    }
-
     public String getEmployeeId() {
         return employeeId;
     }
@@ -59,5 +56,9 @@ public class Employee {
 
     public void setDirectReports(List<Employee> directReports) {
         this.directReports = directReports;
+    }
+
+    public Employee() {
+        // new constructor for unit test
     }
 }

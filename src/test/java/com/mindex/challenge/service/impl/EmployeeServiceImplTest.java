@@ -37,7 +37,9 @@ public class EmployeeServiceImplTest {
     @Before
     public void setup() {
         employeeUrl = "http://localhost:" + port + "/employee";
+        // create url
         employeeIdUrl = "http://localhost:" + port + "/employee/{id}";
+        // read url
     }
 
     @Test
@@ -54,12 +56,11 @@ public class EmployeeServiceImplTest {
         assertNotNull(createdEmployee.getEmployeeId());
         assertEmployeeEquivalence(testEmployee, createdEmployee);
 
-
         // Read checks
-        Employee readEmployee = restTemplate.getForEntity(employeeIdUrl, Employee.class, createdEmployee.getEmployeeId()).getBody();
+        Employee readEmployee = restTemplate
+                .getForEntity(employeeIdUrl, Employee.class, createdEmployee.getEmployeeId()).getBody();
         assertEquals(createdEmployee.getEmployeeId(), readEmployee.getEmployeeId());
         assertEmployeeEquivalence(createdEmployee, readEmployee);
-
 
         // Update checks
         readEmployee.setPosition("Development Manager");
@@ -67,12 +68,11 @@ public class EmployeeServiceImplTest {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        Employee updatedEmployee =
-                restTemplate.exchange(employeeIdUrl,
-                        HttpMethod.PUT,
-                        new HttpEntity<Employee>(readEmployee, headers),
-                        Employee.class,
-                        readEmployee.getEmployeeId()).getBody();
+        Employee updatedEmployee = restTemplate.exchange(employeeIdUrl,
+                HttpMethod.PUT,
+                new HttpEntity<Employee>(readEmployee, headers),
+                Employee.class,
+                readEmployee.getEmployeeId()).getBody();
 
         assertEmployeeEquivalence(readEmployee, updatedEmployee);
     }
