@@ -2,9 +2,9 @@
 
 ## Author: Jeremy Scheuerman
 
-Hello developers at Mindex, Thank you for taking the time to review my solution to the coding challenge, below I have written down some information about the way I did Tasks 1 and 2 as well as the Testing procedures
+Hello developers at Mindex, Thank you for taking the time to review my solution to the coding challenge, below I have written down some information about the way I did tasks 1 and 2 as well as the Testing procedures
 
-Also, I'd like to add that only uploaded this as 2 commits, the first commit is your original unaltered code challenge, and the second is my completed solution to the code challenge, this will allow you to easily find which code was modified / added. (I usually commit much more frequently)
+Also, I'd like to add that I uploaded this code as only 2 commits, the first commit is your original unaltered code challenge, and the second is my completed solution to the code challenge, this will allow you to easily find which code was modified / added. (I usually commit much more frequently)
 
 ### _Disclaimer_
 
@@ -40,13 +40,15 @@ To ensure i achieved the end result, I created a new JSON file to store the comp
 
 ## Unit Testing
 
-As I mentioned i don't have any prior experience with unit testing but I understood the overall concept pretty quickly. Test these classes and ensure that actual result equals expected result. AssignEquals was a pretty basic concept to pickup, and I was able to pickup most of the general Idea from viewing the code from the provided EmployeeServiceImplTest.java and use that as a sort of template. I had a little but of trouble with some of the testing of REST but in the end I got it to work. I wrote Tests for both new services I created
+### _Test Results_ to view screenshots for runs of all test employees for tasks 1 and 2 as well as screenshots of the Unit Tests please reference Testing.pdf
 
-I wrote both CompensationServiceImplTest.java and tested create Read and Update, I had to edit the compensation and add a constructor with Default values to pass the test, I am not sure if this was the correct or not, but I was able to get it to pass the test nonetheless
+As I mentioned I don't have any prior experience with unit testing but I understood the overall concept pretty quickly. Test these classes and ensure that actual result equals expected result. AssignEquals was a pretty basic concept to pickup, and I was able to understand most of the general idea from viewing the code from the provided EmployeeServiceImplTest.java and use that as a sort of template. I had a little but of trouble with some of the testing of REST but in the end I got it to work. I wrote Tests for both new services I created
 
-I wrote ReportingStructureServiceImplTest and tested 3 instances, An employee with zero Reports ,an employee with non-nested reports and and employee with nested reports, some of the code for the tests gets a little messy as I wasn't able to import employee repository properly so i had to populate all of the values manually. Overall though it passes all three tests.
+I wrote CompensationServiceImplTest.java and tested create Read and Update, I had to edit the compensation and add a constructor with Default values to pass the test, I am not sure if this was the correct solution or not, but I was able to get it to pass the test nonetheless
 
-I also added a test for the compensation repository to the dataBootstrapTest.java as well
+I wrote ReportingStructureServiceImplTest and tested 3 instances, An employee with zero Reports ,an employee with non-nested reports and and employee with nested reports, some of the code for the tests gets a little messy at the end as I wasn't able to import employee repository properly so i had to populate all of the values manually. It passes all three tests.
+
+I also added a test for the compensation repository data to the dataBootstrapTest.java as well
 
 In total all eight tests passed which I am happy with for my first time doing any Unit Testing
 
@@ -56,11 +58,11 @@ In total all eight tests passed which I am happy with for my first time doing an
 
 -Added employee as a field to compensation instead of Just employeeID
 
--Asked for clarification about the persistence layer and dig deeper into the documentation and / or ask a senior team member for some help
+-Asked for clarification about the persistence layer and dig deeper into the documentation and / or ask a senior team member for some guidance
 
 -Figure out the issue with the constructors on the Unit Test
 
--Write an html page to dipslay the data and allow fields to be updated
+-Write an html page to dipslay the data in a more organized way and allow fields to be updated /inputted via a javascript form
 
 ## Conclusion
 
